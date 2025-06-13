@@ -1,0 +1,71 @@
+<html>
+<head>
+    <meta https-equiv="Content-Security-Policy" content="default-src *;" />
+    <style>
+      @media only screen and (max-width: 500px) {
+          .g-recaptcha {
+              transform: scale(0.85);
+              transform-origin: 0 0;
+          }
+      }
+  </style>
+    <title>reCAPTCHA demo: Explicit render after an onload callback</title>
+    <script type="text/javascript">
+
+        var onSubmit = function(token) {
+          console.log('success!');
+          console.log(token);
+          window.parent.postMessage(token, "*");
+        };
+
+
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '6LcF5F4qAAAAAFaYH0-1PeJjA3bLdtN2SctIHiAx',
+          'callback' : onSubmit
+        });
+      };
+    </script>
+</head>
+<body>
+<form action="?" method="POST">
+    <div class="g-recaptcha" id="html_element">
+      
+    </div>
+
+<!--    <br>-->
+<!--    <input type="submit" value="onSubmit">-->
+</form>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+</script>
+</body>
+</html>
+
+
+<!--<html>-->
+<!--<head>-->
+<!--    <title>reCAPTCHA demo: Explicit render after an onload callback</title>-->
+<!--    <script>-->
+<!--        var onSubmit = function(token) {-->
+<!--          console.log('success!');-->
+<!--          window.parent.postMessage(token, "*");-->
+<!--        };-->
+
+<!--        var onloadCallback = function() {-->
+<!--          grecaptcha.render('submit', {-->
+<!--            'sitekey' : '6LehoKwnAAAAAD5Hm7EgtjNvi6a6KfEKR3c7HWH1',-->
+<!--            'callback' : onSubmit-->
+<!--          });-->
+<!--        };-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<form action="?" method="POST">-->
+<!--    <input id="submit" type="submit" value="Submit">-->
+<!--</form>-->
+<!--<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"-->
+<!--        async defer>-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

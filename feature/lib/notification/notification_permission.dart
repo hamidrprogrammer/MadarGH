@@ -1,0 +1,3 @@
+class NotificationPermissionHandler {
+  getPermission() {}
+}

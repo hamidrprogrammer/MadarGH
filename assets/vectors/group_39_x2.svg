@@ -1,0 +1,9 @@
+<svg width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g opacity="0.2">
+<circle cx="56" cy="56" r="56" fill="#FFFFFF"/>
+<circle cx="56" cy="56" r="56" fill="#FFFFFF"/>
+</g>
+<circle cx="56" cy="56" r="48" fill="#FFFFFF" fill-opacity="0.2"/>
+<circle cx="56" cy="56" r="40" fill="#FFFFFF"/>
+<path d="M58,42C58,40.895 57.105,40 56,40C54.895,40 54,40.895 54,42L58,42ZM54,70C54,71.105 54.895,72 56,72C57.105,72 58,71.105 58,70L54,70ZM42,54C40.895,54 40,54.895 40,56C40,57.105 40.895,58 42,58L42,54ZM70,58C71.105,58 72,57.105 72,56C72,54.895 71.105,54 70,54L70,58ZM54,42L54,70L58,70L58,42L54,42ZM42,58L70,58L70,54L42,54L42,58Z" fill="#9E3840"/>
+</svg>
