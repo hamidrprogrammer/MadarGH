@@ -5,7 +5,6 @@ import 'package:core/videoPlayer/android_integration.dart'
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
 
 class MyVideoPlayer extends StatefulWidget {
   const MyVideoPlayer({Key? key, this.data = ''}) : super(key: key);
@@ -16,7 +15,7 @@ class MyVideoPlayer extends StatefulWidget {
 }
 
 class _MyVideoPlayerState extends State<MyVideoPlayer> {
-  VideoPlayerController? videoPlayerController;
+  // VideoPlayerController? videoPlayerController;
   var showController = false;
 
   @override
@@ -31,7 +30,7 @@ class _MyVideoPlayerState extends State<MyVideoPlayer> {
 
   @override
   void dispose() {
-    videoPlayerController?.dispose();
+    // videoPlayerController?.dispose();
     super.dispose();
   }
 
@@ -44,57 +43,9 @@ class _MyVideoPlayerState extends State<MyVideoPlayer> {
         borderRadius: const BorderRadius.all(Radius.circular(16.0)),
         border: Border.all(color: Colors.grey),
       ),
-      child: videoPlayerController == null
-          ? const CupertinoActivityIndicator()
-          : ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(16.0)),
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  SizedBox(
-                    width: videoPlayerController?.value.size.width,
-                    height: videoPlayerController?.value.size.height,
-                    child: VideoPlayer(videoPlayerController!),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        showController = true;
-                      });
-                      Future.delayed(const Duration(seconds: 3)).then((value) {
-                        setState(() {
-                          showController = false;
-                        });
-                      });
-                    },
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        if (videoPlayerController?.value.isPlaying == true) {
-                          videoPlayerController?.pause();
-                        } else {
-                          videoPlayerController?.play();
-                        }
-                        setState(() {});
-                      },
-                      icon: AnimatedOpacity(
-                        duration: const Duration(seconds: 1),
-                        opacity: ((videoPlayerController?.value.isPlaying ==
-                                    false) ||
-                                showController)
-                            ? 1
-                            : 0,
-                        child: Icon(
-                          (videoPlayerController?.value.isPlaying == true)
-                              ? Icons.pause_circle_outline
-                              : Icons.play_circle_outline,
-                          size: 50.0,
-                          color: Colors.grey.shade100,
-                        ),
-                      ))
-                ],
-              ),
-            ),
+      child: 
+          const CupertinoActivityIndicator()
+        
     );
   }
 }
